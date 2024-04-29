@@ -14,6 +14,25 @@ class Ui2 extends StatelessWidget {
     "Wesley",
   ];
 
+  final course = const [
+    "All",
+    "Design",
+    "Programming",
+    "Gaming",
+  ];
+
+  final courseNames = const [
+    "User Interface (UI) Design",
+    "Game Design",
+    "C++ Programming",
+  ];
+
+  final courseImages = const [
+    "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR1uDibQ0UTm63Mw5BP1jM1TrW5MIsXqvRG9ZuDdjYXah-YWcds7P9AmGA7YFZX",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXGqoKXKJ8LbL_ZFuDOCVDCL5cDXjzzmeiaKEoWGnQgsutjquzXOumAhFILpNV",
+        "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQZ77vEQHyMGWQu5yiwn37Iklq2WUf29KMqDggA0TrdoOA2PgQhxatykyioCfi",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +41,7 @@ class Ui2 extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 /// My Custom AppBar
                 Row(
@@ -91,7 +111,7 @@ class Ui2 extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
 
                 /// Instructor label
                 const Row(
@@ -112,7 +132,7 @@ class Ui2 extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 15),
 
                 /// Instructor images
                 SingleChildScrollView(
@@ -128,7 +148,7 @@ class Ui2 extends StatelessWidget {
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(16),
                                 child: Image.network(
-                                  "https://randomuser.me/api/portraits/men/${Random().nextInt(99)}.jpg",
+                                  "https://randomuser.me/api/portraits/men/${i + Random().nextInt(90)}.jpg",
                                   height: 66,
                                   width: 66,
                                 ),
@@ -140,8 +160,76 @@ class Ui2 extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SizedBox(height: 40),
+                const Text(
+                  "Courses",
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 24),
+                ),
+                const SizedBox(height: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    for (int i = 0; i < 4; i++)
+                      Text(
+                        course[i],
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: i == 0 ? Colors.black : Colors.black45,
+                            fontWeight: FontWeight.w500),
+                      ),
+                  ],
+                ),
+                Stack(
+                  alignment: Alignment.centerLeft,
+                  children: [
+                    const Divider(),
+                    Container(
+                      height: 2,
+                      width: 25,
+                      color: Colors.redAccent,
+                    ),
+                  ],
+                ),
 
-                Text("Courses"),
+                for (int j = 0; j < 3; j++)
+                  Container(
+                    height: 100,
+                    padding: const EdgeInsets.symmetric(vertical: 20.0),
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.network(
+                            courseImages[j],
+                            height: 60,
+                            width: 60,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Text("📄 24 Lessons"),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Text("▶️ 24 Lessons"),
+                              ],
+                            ),
+                            Text(
+                              courseNames[j],
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700, fontSize: 20),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  )
               ],
             ),
           ),
