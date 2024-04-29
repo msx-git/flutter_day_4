@@ -30,7 +30,7 @@ class Ui2 extends StatelessWidget {
   final courseImages = const [
     "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR1uDibQ0UTm63Mw5BP1jM1TrW5MIsXqvRG9ZuDdjYXah-YWcds7P9AmGA7YFZX",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXGqoKXKJ8LbL_ZFuDOCVDCL5cDXjzzmeiaKEoWGnQgsutjquzXOumAhFILpNV",
-        "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQZ77vEQHyMGWQu5yiwn37Iklq2WUf29KMqDggA0TrdoOA2PgQhxatykyioCfi",
+    "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTQZ77vEQHyMGWQu5yiwn37Iklq2WUf29KMqDggA0TrdoOA2PgQhxatykyioCfi",
   ];
 
   @override
