@@ -5,6 +5,14 @@ import 'package:flutter_day_4/ui/ui_3/widgets/video_player.dart';
 class Ui3 extends StatelessWidget {
   const Ui3({super.key});
 
+  final topicTitles = const [
+    "Introduction",
+    "How To Start Design?",
+    "What Is UI/UX Design?",
+    "User Experience Design",
+    "Design Principles",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,18 +137,18 @@ class Ui3 extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(width: 15),
-                              const Expanded(
+                              Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Introduction",
-                                      style: TextStyle(
+                                      topicTitles[i],
+                                      style: const TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 17),
                                     ),
-                                    SizedBox(height: 8),
-                                    Text(
+                                    const SizedBox(height: 8),
+                                    const Text(
                                       "2 Min 43 Sec",
                                       style: TextStyle(
                                           fontSize: 14, color: Colors.black45),
